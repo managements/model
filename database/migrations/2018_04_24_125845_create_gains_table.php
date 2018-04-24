@@ -15,6 +15,13 @@ class CreateGainsTable extends Migration
     {
         Schema::create('gains', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('prince',45);
+            $table->string('prince_store',45);
+
+            $table->integer('deal_id')->unsigned()->unique()->index();
+            $table->foreign('deal_id')->references('id')->on('deals');
+
             $table->timestamps();
         });
     }

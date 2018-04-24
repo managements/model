@@ -15,6 +15,12 @@ class CreateStorePrincesTable extends Migration
     {
         Schema::create('store_princes', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('prince');
+
+            $table->integer('store_id')->unsigned()->index()->unique();
+            $table->foreign('store_id')->references('id')->on('stores');
+
             $table->timestamps();
         });
     }

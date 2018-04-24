@@ -15,6 +15,15 @@ class CreateCategoryProductsTable extends Migration
     {
         Schema::create('category_products', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('category');
+
+            $table->integer('store_id')->unsigned()->index()->unique();
+            $table->foreign('store_id')->references('id')->on('stores');
+
+            $table->integer('section_id')->unsigned()->index()->unique()->nullable();
+            $table->foreign('section_id')->references('id')->on('sections');
+
             $table->timestamps();
         });
     }
