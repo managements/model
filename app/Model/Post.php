@@ -26,4 +26,9 @@ class Post extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function accountings()
+    {
+        return $this->hasMany(Accounting::class);
+    }
 }

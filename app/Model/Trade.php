@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Trade extends Model
 {
     protected $fillable = [
-        'tva','taxes','company_id','created_at','updated_at'
+        'taxes','justify_taxes','total_taxes',
+        'tva','justify_tva','total_tva','company_id','created_at','updated_at'
     ];
 
     public function company()
@@ -18,5 +19,10 @@ class Trade extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function accounting()
+    {
+        return $this->hasMany(Accounting::class);
     }
 }
