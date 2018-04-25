@@ -8,7 +8,21 @@ class CategoryProduct extends Model
 {
     protected $fillable = [
         'category',
-        'store_id','section_id',
         'created_at','updated_at'
     ];
+
+    public function store()
+    {
+       return $this->belongsTo(Store::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

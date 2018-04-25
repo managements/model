@@ -24,9 +24,6 @@ class CreateInfosTable extends Migration
             $table->string('house_nbr',10)->nullable();
             $table->string('city',50)->nullable();
 
-            $table->integer('tel_id')->unsigned()->index()->unique();
-            $table->foreign('tel_id')->references('id')->on('tels');
-
             $table->integer('user_id')->unsigned()->index()->unique();
             $table->foreign('user_id')->references('id')->on('users');
 

@@ -10,4 +10,14 @@ class ImageProduct extends Model
         'image', 'product_id', 'agenda_id',
         'created_at','updated_at'
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function agenda()
+    {
+        return $this->belongsTo(Agenda::class);
+    }
 }

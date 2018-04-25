@@ -11,4 +11,19 @@ class Email extends Model
     ];
 
     public $timestamps = false;
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function info()
+    {
+        return $this->belongsTo(Info::class);
+    }
+
+    public function deal()
+    {
+        return $this->belongsTo(Deal::class);
+    }
 }

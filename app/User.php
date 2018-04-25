@@ -3,11 +3,11 @@
 namespace App;
 
 use App\Model\Info;
+use App\Model\Post;
 use App\Model\Recover;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
@@ -22,7 +22,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
         'profil', 'cover',
-        'recover_id','info_id',
+        'recover_id',
         'created_at','updated_at'
     ];
 
@@ -40,6 +40,11 @@ class User extends Authenticatable
     public function info()
     {
         return $this->hasOne(Info::class);
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
     }
 
     public function recover()

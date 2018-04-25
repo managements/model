@@ -9,4 +9,9 @@ class StorePrince extends Model
     protected $fillable = [
         'prince','store_id','created_at','updated_at'
     ];
+
+    public function store()
+    {
+        $this->belongsTo(Store::class);
+    }
 }
