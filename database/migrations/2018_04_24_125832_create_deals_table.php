@@ -22,6 +22,7 @@ class CreateDealsTable extends Migration
             $table->string('build',10);
             $table->string('floor',10);
             $table->string('aprt_nbr',10);
+            $table->string('city',20);
             $table->string('description');
             $table->string('vote',5);
             $table->boolean('provider')->nullable();

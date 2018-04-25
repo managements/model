@@ -17,11 +17,10 @@ class CreateTradesTable extends Migration
             $table->increments('id');
 
             $table->string('tva',45);
-            $table->string('taxe',45)->nullable();
+            $table->string('taxes',45)->nullable();
 
             $table->integer('company_id')->unsigned()->index();
             $table->foreign('company_id')->references('id')->on('companies');
-
 
             $table->timestamps();
         });

@@ -26,6 +26,8 @@ class CreateEmailsTable extends Migration
 
             $table->integer('deal_id')->unsigned()->index()->nullable();
             $table->foreign('deal_id')->references('id')->on('deals');
+
+            $table->dateTime('created_at');
         });
     }
 

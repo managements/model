@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
 
             $table->integer('recover_id')->unsigned()->index()->unique()->nullable();
             $table->foreign('recover_id')->references('id')->on('recovers');
+
             $table->integer('post_id')->unsigned()->index()->unique()->nullable();
             $table->foreign('post_id')->references('id')->on('posts');
 

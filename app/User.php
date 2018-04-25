@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Model\Info;
+use App\Model\Recover;
 use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,7 +23,6 @@ class User extends Authenticatable
         'name', 'email', 'password',
         'profil', 'cover',
         'recover_id','info_id',
-        'society_id','post_id',
         'created_at','updated_at'
     ];
 
@@ -38,12 +39,12 @@ class User extends Authenticatable
 
     public function info()
     {
-        return $this->hasOne('App\Model\Info');
+        return $this->hasOne(Info::class);
     }
 
     public function recover()
     {
-        return $this->hasOne('App\Model\Recover');
+        return $this->hasOne(Recover::class);
     }
 
     public static function target($name)

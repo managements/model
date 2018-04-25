@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gain extends Model
 {
-    //
+    protected $fillable = [
+        'prince','prince_store','deal_id',
+        'created_at','updated_at'
+    ];
 }

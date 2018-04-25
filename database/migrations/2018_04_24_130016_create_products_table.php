@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('tva',45);
             $table->longText('description');
             $table->string('size',45);
-            $table->boolean('expired')->default(false);
+            $table->dateTime('expired')->nullable();
             $table->string('qt',45);
 
             $table->integer('category_product_id')->unsigned()->index()->nullable();
